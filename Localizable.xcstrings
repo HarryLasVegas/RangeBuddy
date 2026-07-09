@@ -1,0 +1,532 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@%%" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@%%"
+          }
+        }
+      }
+    },
+    "%@kWh" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@kWh"
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "About" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Über"
+          }
+        }
+      }
+    },
+    "Author" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entwickler"
+          }
+        }
+      }
+    },
+    "Average Consumption" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durchschnittsverbrauch"
+          }
+        }
+      }
+    },
+    "Battery Capacity" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batteriekapazität"
+          }
+        }
+      }
+    },
+    "Calculates the remaining range from your saved state of charge, average consumption and battery capacity - without changing any of them." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berechnet die Restreichweite aus den gespeicherten Werten SoC, Durchschnittsverbrauch und Batteriekapazität - ohne diese zu verändern."
+          }
+        }
+      }
+    },
+    "Consumption" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbrauch"
+          }
+        }
+      }
+    },
+    "Consumption set to %@. Your range is %lld %@." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbrauch auf %1$@ geändert. Deine Reichweite beträgt %2$lld %3$@."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Consumption set to %1$@. Your range is %2$lld %3$@."
+          }
+        }
+      }
+    },
+    "Consumption Unit" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbrauchseinheit"
+          }
+        }
+      }
+    },
+    "Get Range" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restreichweite"
+          }
+        }
+      }
+    },
+    "Get started!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los geht’s!"
+          }
+        }
+      }
+    },
+    "Kilometers" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kilometer"
+          }
+        }
+      }
+    },
+    "Let RangeBuddy work it out from your real consumption - and just ask Siri while you drive." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lass RangeBuddy die Reichweite aus Deinem realen Verbrauch berechnen - und frag unterwegs einfach Siri."
+          }
+        }
+      }
+    },
+    "License" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lizenz"
+          }
+        }
+      }
+    },
+    "Mail" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mail"
+          }
+        }
+      }
+    },
+    "Miles" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meilen"
+          }
+        }
+      }
+    },
+    "Please note" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gut zu wissen"
+          }
+        }
+      }
+    },
+    "Range is: %lld %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reichweite ist: %1$lld %2$@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Range is: %1$lld %2$@"
+          }
+        }
+      }
+    },
+    "RangeBuddy" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RangeBuddy"
+          }
+        }
+      }
+    },
+    "RangeBuddy can't access your car's data (like the current charge). You enter all values yourself." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RangeBuddy kann nicht auf Deine Fahrzeugdaten zugreifen. Gib sämtliche Werte daher selbst an."
+          }
+        }
+      }
+    },
+    "Remaining Range" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reichweite"
+          }
+        }
+      }
+    },
+    "Select Unit" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einheit wählen"
+          }
+        }
+      }
+    },
+    "Set both at once" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beide auf einmal ändern"
+          }
+        }
+      }
+    },
+    "Set Consumption" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbrauch ändern"
+          }
+        }
+      }
+    },
+    "Set Consumption to ${newConsumption}" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbrauch auf ${newConsumption} ändern"
+          }
+        }
+      }
+    },
+    "Set SoC" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SoC ändern"
+          }
+        }
+      }
+    },
+    "Set SoC and Consumption" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SoC und Verbrauch ändern"
+          }
+        }
+      }
+    },
+    "Set SoC to ${newSoc}" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SoC auf ${newSoc} ändern"
+          }
+        }
+      }
+    },
+    "Set SoC to ${newSoc} and consumption to ${newConsumption}" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SoC auf ${newSoc} und Verbrauch auf ${newConsumption} ändern"
+          }
+        }
+      }
+    },
+    "Sets the average consumption you supply and reports the range you can still drive at that consumption." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ändert den Durchschnittsverbrauch und gibt zurück, wie weit Du mit diesem Verbrauch noch kommst."
+          }
+        }
+      }
+    },
+    "Sets the state of charge and average consumption you supply in one step, then reports the new range." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ändert den SoC und den Durchschnittsverbrauch in einem Schritt und gibt die neue Reichweite zurück."
+          }
+        }
+      }
+    },
+    "Sets the state of charge you supply and reports how far the current charge now takes you." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ändert den SoC und gibt zurück, wie weit Du noch kommst."
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
+          }
+        }
+      }
+    },
+    "Show Siri tips" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri Tipps anzeigen"
+          }
+        }
+      }
+    },
+    "Siri only accepts whole numbers for now." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri akzeptiert derzeit nur ganze Zahlen."
+          }
+        }
+      }
+    },
+    "Siri reserves words like 'battery' for your iPhone's own battery - say 'SoC' or 'charge percentage' instead." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri hat Wörter wie „Batterie“ für Deinen iPhone-Akku reserviert - Benutz daher „SoC“."
+          }
+        }
+      }
+    },
+    "Siri Tips" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri Tipps"
+          }
+        }
+      }
+    },
+    "SoC" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SoC"
+          }
+        }
+      }
+    },
+    "SoC set to %@, Consumption set to %@. Your range is %lld %@." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SoC auf %1$@ und Verbrauch auf %2$@ geändert. Deine Reichweite beträgt %3$lld %4$@."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "SoC set to %1$@, Consumption set to %2$@. Your range is %3$lld %4$@."
+          }
+        }
+      }
+    },
+    "SoC set to %@. Your range is %lld %@." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SoC auf %1$@ geändert. Deine Reichweite beträgt %2$lld %3$@."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "SoC set to %1$@. Your range is %2$lld %3$@."
+          }
+        }
+      }
+    },
+    "Tired of your EV guessing your range wrong?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genervt, dass Dein E-Auto die Reichweite falsch anzeigt?"
+          }
+        }
+      }
+    },
+    "Try" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausprobieren"
+          }
+        }
+      }
+    },
+    "Value for Consumption must be between %@ and %@." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Wert für den Verbrauch muss zwischen %1$@ und %2$@ liegen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Value for Consumption must be between %1$@ and %2$@."
+          }
+        }
+      }
+    },
+    "Value for SoC must be between %@ and %@." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Wert für den SoC muss zwischen %1$@ und %2$@ liegen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Value for SoC must be between %1$@ and %2$@."
+          }
+        }
+      }
+    },
+    "Version" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version"
+          }
+        }
+      }
+    },
+    "What's the new consumption?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie hoch ist der neue Durchschnittsverbrauch?"
+          }
+        }
+      }
+    },
+    "What's the new SoC?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie hoch ist der neue SoC?"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

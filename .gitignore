@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+build/
+DerivedData/
+
+# Local-only — not for GitHub
+CLAUDE.md
+Claude/
+Artwork/

@@ -1,0 +1,113 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "${applicationName} get range" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "${applicationName} Reichweite",
+              "${applicationName} Restreichweite",
+              "${applicationName} Wie groß ist meine Reichweite",
+              "${applicationName} Wie weit komme ich noch"
+            ]
+          }
+        },
+        "en" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "${applicationName} get range",
+              "${applicationName} range",
+              "${applicationName} what's my range",
+              "${applicationName} what's my remaining range"
+            ]
+          }
+        }
+      }
+    },
+    "${applicationName} set consumption" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "${applicationName} Verbrauch ändern",
+              "${applicationName} Durchschnittsverbrauch ändern"
+            ]
+          }
+        },
+        "en" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "${applicationName} set consumption",
+              "${applicationName} set average consumption",
+              "${applicationName} change consumption",
+              "${applicationName} change average consumption"
+            ]
+          }
+        }
+      }
+    },
+    "${applicationName} set SoC" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "${applicationName} SoC ändern"
+            ]
+          }
+        },
+        "en" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "${applicationName} set SoC",
+              "${applicationName} set state of charge",
+              "${applicationName} change SoC",
+              "${applicationName} change state of charge"
+            ]
+          }
+        }
+      }
+    },
+    "${applicationName} set SoC and consumption" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "${applicationName} SoC und Verbrauch ändern",
+              "${applicationName} Verbrauch und SoC ändern",
+              "${applicationName} SoC und Durchschnittsverbrauch ändern",
+              "${applicationName} Durchschnittsverbrauch und SoC ändern"
+            ]
+          }
+        },
+        "en" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "${applicationName} set SoC and consumption",
+              "${applicationName} set SoC and average consumption",
+              "${applicationName} set state of charge and consumption",
+              "${applicationName} set state of charge and average consumption",
+              "${applicationName} change SoC and consumption",
+              "${applicationName} change SoC and average consumption",
+              "${applicationName} change state of charge and consumption",
+              "${applicationName} change state of charge and average consumption"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

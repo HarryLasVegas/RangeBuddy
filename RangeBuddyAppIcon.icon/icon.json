@@ -1,0 +1,85 @@
+{
+  "fill" : "system-dark",
+  "groups" : [
+    {
+      "blend-mode" : "normal",
+      "blur-material" : 0.5,
+      "hidden" : false,
+      "layers" : [
+        {
+          "fill" : {
+            "solid" : "display-p3:0.37058,0.81108,0.86673,1.00000"
+          },
+          "glass" : true,
+          "image-name" : "logo2.svg",
+          "name" : "logo2",
+          "position" : {
+            "scale" : 0.5,
+            "translation-in-points" : [
+              -9.37060546875,
+              -179.69390869140625
+            ]
+          }
+        }
+      ],
+      "opacity" : 1,
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "specular" : true,
+      "translucency" : {
+        "enabled" : false,
+        "value" : 0.5
+      }
+    },
+    {
+      "blur-material" : null,
+      "layers" : [
+        {
+          "fill" : {
+            "solid" : "display-p3:0.37058,0.81108,0.86673,1.00000"
+          },
+          "glass" : true,
+          "image-name" : "RANGE2 3.svg",
+          "name" : "RANGE2 3",
+          "position" : {
+            "scale" : 0.8,
+            "translation-in-points" : [
+              -0.3448000000000775,
+              86.98661425781245
+            ]
+          }
+        },
+        {
+          "fill" : {
+            "solid" : "extended-gray:1.00000,1.00000"
+          },
+          "image-name" : "BUDDY2 2.svg",
+          "name" : "BUDDY2 2",
+          "position" : {
+            "scale" : 0.8,
+            "translation-in-points" : [
+              0.006799999999998363,
+              235.482177734375
+            ]
+          }
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}
