@@ -1,0 +1,96 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Avg Cons" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbr."
+          }
+        }
+      }
+    },
+    "Kilometers" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kilometer"
+          }
+        }
+      }
+    },
+    "Miles" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meilen"
+          }
+        }
+      }
+    },
+    "Range" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reichweite"
+          }
+        }
+      }
+    },
+    "Range Matrix" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reichweiten-Matrix"
+          }
+        }
+      }
+    },
+    "Remaining Range" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restreichweite"
+          }
+        }
+      }
+    },
+    "See how your range changes with SoC and consumption." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeigt, wie sich deine Reichweite mit SoC und Verbrauch ändert."
+          }
+        }
+      }
+    },
+    "SoC" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SoC"
+          }
+        }
+      }
+    },
+    "Your remaining range at a glance." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Restreichweite auf einen Blick."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

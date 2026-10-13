@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage(AppStorageKeys.siriTipsAreVisible.rawValue)
+    @AppStorage(AppStorageKeys.siriTipsAreVisible.rawValue, store: .shared)
     private var siriTipsAreVisible = true
 
-    @AppStorage(AppStorageKeys.batteryCapacity.rawValue)
+    @AppStorage(AppStorageKeys.batteryCapacity.rawValue, store: .shared)
     private var batteryCapacity: Double = AppConstants.standardBatteryCapacity
 
-    @AppStorage(AppStorageKeys.consumptionUnitType.rawValue)
+    @AppStorage(AppStorageKeys.consumptionUnitType.rawValue, store: .shared)
     private var consumptionUnitType: ConsumptionUnitType = AppConstants.consumptionUnitType
 
     @Environment(\.dismiss)
@@ -23,7 +23,7 @@ struct SettingsView: View {
     private let email = "info@harrylasvegas.de"
 
     #if DEBUG
-    @AppStorage(AppStorageKeys.hasCompletedOnboarding.rawValue)
+    @AppStorage(AppStorageKeys.hasCompletedOnboarding.rawValue, store: .shared)
     private var hasCompletedOnboarding: Bool = false
     #endif
 

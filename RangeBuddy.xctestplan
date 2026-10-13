@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "4E21603C-0E18-4895-9B72-C56BD3BEDE0E",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:RangeBuddy.xcodeproj",
+        "identifier" : "4A2D1C552FF8BB2400648FD2",
+        "name" : "RangeBuddyTests"
+      }
+    }
+  ],
+  "version" : 1
+}

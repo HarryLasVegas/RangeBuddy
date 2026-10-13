@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AppStorageKeys: String {
+enum AppStorageKeys: String, CaseIterable {
     case soc
     case avgConsumptionInKwhPer100km
     case batteryCapacity

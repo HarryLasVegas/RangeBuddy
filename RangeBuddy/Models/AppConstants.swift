@@ -19,4 +19,13 @@ nonisolated struct AppConstants {
     static let batteryCapacityRange: ClosedRange<Double> = 20...150
 
     static let consumptionUnitType: ConsumptionUnitType = .kWhPer100km
+
+    // MatrixWidget
+    static let matrixWidgetKind = "MatrixWidget"
+    static let matrixDimension: Int = 5
+    static let matrixSocStepSize = 10.0
+
+    // RangeWidget
+    static let rangeWidgetKind = "RangeWidget"
+    static let rangeWidgetSocSlice = 10.0
 }

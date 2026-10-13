@@ -11,6 +11,7 @@ import AppIntents
 @main
 struct RangeBuddyApp: App {
     init() {
+        DataStore.migrateToAppGroup()
         RangeShortcuts.updateAppShortcutParameters()
     }
 

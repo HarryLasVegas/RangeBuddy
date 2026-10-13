@@ -76,7 +76,7 @@ nonisolated enum ConsumptionUnitType: String, CaseIterable, Identifiable {
         return (lowerDisplayedBound ... upperDisplayedBound)
     }
 
-    var consumptionStep: Double {
+    var adjustmentStep: Double {
         switch self {
         case .kWhPer100km: 0.5
         case .milesPerKWh: 0.1
@@ -84,10 +84,29 @@ nonisolated enum ConsumptionUnitType: String, CaseIterable, Identifiable {
         }
     }
 
+    var comparisonStep: Double {
+        switch self {
+        case .kWhPer100km: 2.0
+        case .milesPerKWh: 0.5
+        case .whPerMile: 25.0
+        }
+    }
+
     var fractionDigits: Int {
         switch self {
         case .kWhPer100km, .milesPerKWh: 1
         case .whPerMile: 0
+        }
+    }
+
+    /// `true` for units where a larger number means less energy used, like `mi/kWh`.
+    ///
+    /// The matrix orders its consumption axis by efficiency rather than by value,
+    /// so the frugal end is always at the top - in every unit.
+    var higherIsMoreEfficient: Bool {
+        switch self {
+        case .kWhPer100km, .whPerMile: false
+        case .milesPerKWh: true
         }
     }
 }

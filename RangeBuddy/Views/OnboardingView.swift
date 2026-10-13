@@ -9,7 +9,8 @@ import SwiftUI
 import AppIntents
 
 struct OnboardingView: View {
-    @AppStorage(AppStorageKeys.hasCompletedOnboarding.rawValue) private var hasCompletedOnboarding: Bool = false
+    @AppStorage(AppStorageKeys.hasCompletedOnboarding.rawValue, store: .shared)
+    private var hasCompletedOnboarding: Bool = false
 
     var body: some View {
         ScrollView {

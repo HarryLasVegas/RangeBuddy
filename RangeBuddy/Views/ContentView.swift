@@ -7,27 +7,32 @@
 
 import SwiftUI
 import AppIntents
+import WidgetKit
 
 struct ContentView: View {
-    @AppStorage(AppStorageKeys.soc.rawValue)
+    @AppStorage(AppStorageKeys.soc.rawValue, store: .shared)
     private var soc: Double = AppConstants.standardSoc
 
-    @AppStorage(AppStorageKeys.avgConsumptionInKwhPer100km.rawValue)
+    @AppStorage(AppStorageKeys.avgConsumptionInKwhPer100km.rawValue, store: .shared)
     private var avgConsumptionInKwhPer100km: Double = AppConstants.standardAvgConsumptionInKwhPer100km
 
-    @AppStorage(AppStorageKeys.batteryCapacity.rawValue)
+    @AppStorage(AppStorageKeys.batteryCapacity.rawValue, store: .shared)
     private var batteryCapacity: Double = AppConstants.standardBatteryCapacity
 
-    @AppStorage(AppStorageKeys.consumptionUnitType.rawValue)
+    @AppStorage(AppStorageKeys.consumptionUnitType.rawValue, store: .shared)
     private var consumptionUnitType: ConsumptionUnitType = AppConstants.consumptionUnitType
 
-    @AppStorage(AppStorageKeys.siriTipsAreVisible.rawValue)
+    @AppStorage(AppStorageKeys.siriTipsAreVisible.rawValue, store: .shared)
     private var siriTipsAreVisible: Bool = true
 
-    @AppStorage(AppStorageKeys.hasCompletedOnboarding.rawValue)
+    @AppStorage(AppStorageKeys.hasCompletedOnboarding.rawValue, store: .shared)
     private var hasCompletedOnboarding: Bool = false
 
-    @State private var settingsSheetIsShown: Bool = false
+    @State
+    private var settingsSheetIsShown: Bool = false
+
+    @Environment(\.scenePhase)
+    private var scenePhase
 
     var body: some View {
         NavigationStack {
@@ -75,7 +80,7 @@ struct ContentView: View {
                                             avgConsumptionInKwhPer100km = consumptionUnitType.toCanonical(displayValue)
                                         }),
                                     in: consumptionUnitType.consumptionRange,
-                                    step: consumptionUnitType.consumptionStep
+                                    step: consumptionUnitType.adjustmentStep
                                 )
                                 Spacer(minLength: 20)
                                 Text(formattedConsumption)
@@ -120,6 +125,11 @@ struct ContentView: View {
             }
             .fullScreenCover(isPresented: $hasCompletedOnboarding.inverted) {
                 OnboardingView()
+            }
+        }
+        .onChange(of: scenePhase) { _, newPhase in
+            if newPhase == .inactive || newPhase == .background {
+                WidgetCenter.shared.reloadAllTimelines()
             }
         }
     }
