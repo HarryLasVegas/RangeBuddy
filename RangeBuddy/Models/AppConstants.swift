@@ -29,6 +29,7 @@ nonisolated struct AppConstants {
     static let matrixWidgetKind = "MatrixWidget"
     static let matrixDimension: Int = 5
     static let matrixSocStepSize = 10.0
+    static let matrixSocMaxFractionDigits = 1
 
     // RangeWidget
     static let rangeWidgetKind = "RangeWidget"

@@ -34,7 +34,8 @@ struct MatrixCalculatorTests {
             currentValue: soc,
             stepSize: stepSize,
             range: socRange,
-            neighborLowerBound: stepSize
+            neighborLowerBound: stepSize,
+            maxFractionDigits: 1
         )
 
         // Just dummy values - axis doesn't matter in this test
@@ -43,7 +44,8 @@ struct MatrixCalculatorTests {
             currentValue: 17.5,
             stepSize: unit.comparisonStep,
             range: unit.consumptionRange,
-            neighborLowerBound: unit.consumptionRange.lowerBound
+            neighborLowerBound: unit.consumptionRange.lowerBound,
+            maxFractionDigits: unit.fractionDigits
         )
 
         let matrix = MatrixCalculator.createMatrix(
@@ -82,14 +84,16 @@ struct MatrixCalculatorTests {
             currentValue: 20.0,
             stepSize: AppConstants.matrixSocStepSize,
             range: AppConstants.socRange,
-            neighborLowerBound: AppConstants.matrixSocStepSize
+            neighborLowerBound: AppConstants.matrixSocStepSize,
+            maxFractionDigits: AppConstants.matrixSocMaxFractionDigits
         )
 
         let avgConsumptionSpec = AxisSpec(
             currentValue: avgConsumption,
             stepSize: stepSize,
             range: avgConsumptionRange,
-            neighborLowerBound: avgConsumptionRange.lowerBound
+            neighborLowerBound: avgConsumptionRange.lowerBound,
+            maxFractionDigits: 1
         )
 
         let matrix = MatrixCalculator.createMatrix(
@@ -127,14 +131,16 @@ struct MatrixCalculatorTests {
             currentValue: 20.0,
             stepSize: AppConstants.matrixSocStepSize,
             range: AppConstants.socRange,
-            neighborLowerBound: AppConstants.matrixSocStepSize
+            neighborLowerBound: AppConstants.matrixSocStepSize,
+            maxFractionDigits: AppConstants.matrixSocMaxFractionDigits
         )
 
         let avgConsumptionSpec = AxisSpec(
             currentValue: avgConsumption,
             stepSize: stepSize,
             range: avgConsumptionRange,
-            neighborLowerBound: avgConsumptionRange.lowerBound
+            neighborLowerBound: avgConsumptionRange.lowerBound,
+            maxFractionDigits: 1
         )
 
         let matrix = MatrixCalculator.createMatrix(
@@ -166,14 +172,16 @@ struct MatrixCalculatorTests {
             currentValue: soc,
             stepSize: socStepSize,
             range: socRange,
-            neighborLowerBound: socStepSize
+            neighborLowerBound: socStepSize,
+            maxFractionDigits: 1
         )
 
         let avgConsumptionSpec = AxisSpec(
             currentValue: avgConsumption,
             stepSize: avgConsumptionStepSize,
             range: avgConsumptionRange,
-            neighborLowerBound: avgConsumptionRange.lowerBound
+            neighborLowerBound: avgConsumptionRange.lowerBound,
+            maxFractionDigits: 1
         )
 
         let matrix = MatrixCalculator.createMatrix(
@@ -209,14 +217,16 @@ struct MatrixCalculatorTests {
             currentValue: 20.0,
             stepSize: AppConstants.matrixSocStepSize,
             range: AppConstants.socRange,
-            neighborLowerBound: AppConstants.matrixSocStepSize
+            neighborLowerBound: AppConstants.matrixSocStepSize,
+            maxFractionDigits: AppConstants.matrixSocMaxFractionDigits
         )
 
         let avgConsumptionSpec = AxisSpec(
             currentValue: avgConsumption,
             stepSize: avgConsumptionStepSize,
             range: avgConsumptionRange,
-            neighborLowerBound: avgConsumptionRange.lowerBound
+            neighborLowerBound: avgConsumptionRange.lowerBound,
+            maxFractionDigits: 1
         )
 
         let matrix = MatrixCalculator.createMatrix(

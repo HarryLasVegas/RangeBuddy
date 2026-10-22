@@ -12,4 +12,5 @@ nonisolated struct AxisSpec {
     let stepSize: Double
     let range: ClosedRange<Double>
     let neighborLowerBound: Double
+    let maxFractionDigits: Int
 }

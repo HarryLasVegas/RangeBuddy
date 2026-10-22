@@ -38,6 +38,6 @@ struct MatrixWidgetHeaderCellView: View {
     MatrixWidgetHeaderCellView(
         headerValue: 17.5,
         isHighlighted: true,
-        fractionLength: 0...1
+        fractionLength: 0...AppConstants.matrixSocMaxFractionDigits
     )
 }

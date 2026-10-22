@@ -31,7 +31,8 @@ struct MatrixWidgetProvider: TimelineProvider {
             currentValue: store.soc,
             stepSize: AppConstants.matrixSocStepSize,
             range: AppConstants.socRange,
-            neighborLowerBound: AppConstants.matrixSocStepSize
+            neighborLowerBound: AppConstants.matrixSocStepSize,
+            maxFractionDigits: AppConstants.matrixSocMaxFractionDigits
         )
 
         let consumptionUnitType = store.consumptionUnitType
@@ -41,7 +42,8 @@ struct MatrixWidgetProvider: TimelineProvider {
             currentValue: consumptionUnitType.fromCanonical(store.avgConsumptionInKwhPer100km),
             stepSize: consumptionUnitType.comparisonStep,
             range: consumptionRange,
-            neighborLowerBound: consumptionRange.lowerBound
+            neighborLowerBound: consumptionRange.lowerBound,
+            maxFractionDigits: consumptionUnitType.fractionDigits
         )
 
         return MatrixCalculator.createMatrix(
@@ -77,7 +79,7 @@ struct MatrixWidgetEntryView: View {
                     MatrixWidgetHeaderCellView(
                         headerValue: soc,
                         isHighlighted: isCurrentSoc,
-                        fractionLength: 0...1
+                        fractionLength: 0...AppConstants.matrixSocMaxFractionDigits
                     )
                 }
             }
