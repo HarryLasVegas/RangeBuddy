@@ -190,4 +190,44 @@ struct MatrixCalculatorTests {
         // 60 % SoC, 18 kWh/100km: 30 kWh / 18 × 100 = 166.7, truncated to 166
         #expect(matrix.range(socIndex: 3, avgConsumptionIndex: 1) == 166)
     }
+
+    @Test func consumptionJustBelowLowerBoundIsAccepted() {
+        let avgConsumptionStepSize = 0.5
+        let avgConsumptionRange: ClosedRange<Double> = 1.8...6.2
+
+        // a value of 1.8, if saved canonical and being converted back,
+        // results in 1.7999999999999998 - just below the lower bound
+        let avgConsumption = 1.7999999999999998
+
+        let matrixDimension = 5
+        let unit: ConsumptionUnitType = .milesPerKWh
+        let batteryCapacity = 50.0
+
+        // Just dummy values - axis doesn't matter in this test
+        // but must be available
+        let socSpec = AxisSpec(
+            currentValue: 20.0,
+            stepSize: AppConstants.matrixSocStepSize,
+            range: AppConstants.socRange,
+            neighborLowerBound: AppConstants.matrixSocStepSize
+        )
+
+        let avgConsumptionSpec = AxisSpec(
+            currentValue: avgConsumption,
+            stepSize: avgConsumptionStepSize,
+            range: avgConsumptionRange,
+            neighborLowerBound: avgConsumptionRange.lowerBound
+        )
+
+        let matrix = MatrixCalculator.createMatrix(
+            soc: socSpec,
+            avgConsumption: avgConsumptionSpec,
+            batteryCapacity: batteryCapacity,
+            matrixDimension: matrixDimension,
+            consumptionUnitType: unit
+        )
+
+        #expect(matrix.avgConsumptionHeaders == [3.5, 3.0, 2.5, 2.0, 1.7999999999999998])
+        #expect(matrix.currentAvgConsumptionIndex == 4)
+    }
 }

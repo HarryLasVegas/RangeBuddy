@@ -10,6 +10,8 @@ import Foundation
 nonisolated struct MatrixCalculator {
     private init() {}
 
+    private static let rangeTolerance = 1e-9
+
     static func createMatrix(
         soc socAxisSpec: AxisSpec,
         avgConsumption avgConsumptionAxisSpec: AxisSpec,
@@ -108,7 +110,12 @@ nonisolated struct MatrixCalculator {
         matrixDimension: Int
     ) -> (values: [Double], baseValueIndex: Int) {
 
-        precondition(axisSpec.range.contains(axisSpec.currentValue), "The currentValue has to be in the given range")
+        let tolerantRange = (axisSpec.range.lowerBound - rangeTolerance)...(axisSpec.range.upperBound + rangeTolerance)
+
+        precondition(
+            tolerantRange.contains(axisSpec.currentValue),
+            "The currentValue has to be in the given range with a small float tolerance"
+        )
         precondition(axisSpec.range.contains(axisSpec.neighborLowerBound), "neighborLowerBound must be in given range")
         precondition(axisSpec.range.lowerBound >= 0, "Range must have only positive values")
         precondition(axisSpec.stepSize > 0, "StepSize has to be a positive number")

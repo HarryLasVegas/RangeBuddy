@@ -24,6 +24,7 @@ struct SetConsumptionIntent: AppIntent {
     func perform() async throws -> some IntentResult & ProvidesDialog {
         let store = DataStore()
 
+        // TODO: change!
         guard AppConstants.avgConsumptionInKwhPer100kmRange.contains(newConsumption) else {
             let consumption = AppConstants.avgConsumptionInKwhPer100kmRange
             let format: FloatingPointFormatStyle<Double> = .number.precision(.fractionLength(0))

@@ -60,20 +60,11 @@ nonisolated enum ConsumptionUnitType: String, CaseIterable, Identifiable {
     }
 
     var consumptionRange: ClosedRange<Double> {
-        let lowerCanonicalBound = AppConstants.avgConsumptionInKwhPer100kmRange.lowerBound
-        let upperCanonicalBound = AppConstants.avgConsumptionInKwhPer100kmRange.upperBound
-
-        let lowerDisplayedBound = min(
-            self.fromCanonical(lowerCanonicalBound),
-            self.fromCanonical(upperCanonicalBound)
-        )
-
-        let upperDisplayedBound = max(
-            self.fromCanonical(lowerCanonicalBound),
-            self.fromCanonical(upperCanonicalBound)
-        )
-
-        return (lowerDisplayedBound ... upperDisplayedBound)
+        switch self {
+        case .kWhPer100km: 10...35
+        case .milesPerKWh: 1.8...6.2
+        case .whPerMile: 165...560
+        }
     }
 
     var adjustmentStep: Double {

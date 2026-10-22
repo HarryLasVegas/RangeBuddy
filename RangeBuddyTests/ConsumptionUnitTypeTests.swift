@@ -34,4 +34,26 @@ struct ConsumptionUnitTypeTests {
         #expect(abs(result - expected) < tolerance)
     }
 
+    @Test(arguments: ConsumptionUnitType.allCases)
+    func consumptionRangeBoundsAreMultiplesOfAdjustmentStep(unit: ConsumptionUnitType) {
+        // tests if the bounds are on the ticks of the slider
+        let tolerance = 0.001
+
+        let lowerBoundQuotient = unit.consumptionRange.lowerBound / unit.adjustmentStep
+        let upperBoundQuotient = unit.consumptionRange.upperBound / unit.adjustmentStep
+
+        #expect(abs(lowerBoundQuotient - lowerBoundQuotient.rounded()) < tolerance)
+        #expect(abs(upperBoundQuotient - upperBoundQuotient.rounded()) < tolerance)
+    }
+
+    @Test(arguments: ConsumptionUnitType.allCases)
+    func consumptionRangeIsPlausible(unit: ConsumptionUnitType) {
+        let plausibleRangeInKwhPer100km: ClosedRange<Double> = 10...35
+
+        let lowerBoundInKwhPer100km = unit.toCanonical(unit.consumptionRange.lowerBound)
+        let upperBoundInKwhPer100km = unit.toCanonical(unit.consumptionRange.upperBound)
+
+        #expect(plausibleRangeInKwhPer100km.contains(lowerBoundInKwhPer100km))
+        #expect(plausibleRangeInKwhPer100km.contains(upperBoundInKwhPer100km))
+    }
 }
