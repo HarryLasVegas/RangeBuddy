@@ -56,4 +56,18 @@ struct ConsumptionUnitTypeTests {
         #expect(plausibleRangeInKwhPer100km.contains(lowerBoundInKwhPer100km))
         #expect(plausibleRangeInKwhPer100km.contains(upperBoundInKwhPer100km))
     }
+
+    @Test(arguments: ConsumptionUnitType.allCases)
+    func standardAvgConsumptionIsInRange(unit: ConsumptionUnitType) {
+        #expect(unit.consumptionRange.contains(unit.standardAvgConsumption))
+    }
+
+    @Test(arguments: ConsumptionUnitType.allCases)
+    func standardAvgConsumptionIsMultipleOfAdjustmentStep(unit: ConsumptionUnitType) {
+        let tolerance = 0.001
+
+        let quotient = unit.standardAvgConsumption / unit.adjustmentStep
+
+        #expect(abs(quotient - quotient.rounded()) < tolerance)
+    }
 }

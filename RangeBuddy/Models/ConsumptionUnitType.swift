@@ -67,6 +67,14 @@ nonisolated enum ConsumptionUnitType: String, CaseIterable, Identifiable {
         }
     }
 
+    var standardAvgConsumption: Double {
+        switch self {
+        case .kWhPer100km: 17.5
+        case .milesPerKWh: 3.5
+        case .whPerMile: 280
+        }
+    }
+
     var adjustmentStep: Double {
         switch self {
         case .kWhPer100km: 0.5
