@@ -17,6 +17,9 @@ struct SettingsView: View {
     @AppStorage(AppStorageKeys.consumptionUnitType.rawValue, store: .shared)
     private var consumptionUnitType: ConsumptionUnitType = AppConstants.consumptionUnitType
 
+    @AppStorage(AppStorageKeys.avgConsumptionInKwhPer100km.rawValue, store: .shared)
+    private var avgConsumptionInKwhPer100km: Double = AppConstants.standardAvgConsumptionInKwhPer100km
+
     @Environment(\.dismiss)
     private var dismiss
 
@@ -91,6 +94,13 @@ struct SettingsView: View {
                     }
                 }
             }
+        }
+        .onChange(of: consumptionUnitType) { _, newValue in
+            // Resets the consumption to the standard value of the new unit, so the slider
+            // starts on a clean step instead of a converted, crooked value.
+            // This is the only place where the unit changes. Any future way to change it
+            // (e.g. an intent) must reset the consumption the same way.
+            avgConsumptionInKwhPer100km = newValue.toCanonical(newValue.standardAvgConsumption)
         }
     }
 }
