@@ -61,6 +61,7 @@
 		4ABE2F43304B2DE100D26944 /* Exceptions for "RangeBuddy" folder in "RangeBuddyWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"Extensions/FormatStyle+Ext.swift",
 				"Extensions/UserDefaults+Ext.swift",
 				Models/AppConstants.swift,
 				Models/AppStorageKeys.swift,

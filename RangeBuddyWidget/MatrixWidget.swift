@@ -79,7 +79,7 @@ struct MatrixWidgetEntryView: View {
                     MatrixWidgetHeaderCellView(
                         headerValue: soc,
                         isHighlighted: isCurrentSoc,
-                        fractionLength: 0...AppConstants.matrixSocMaxFractionDigits
+                        maxFractionDigits: AppConstants.matrixSocMaxFractionDigits
                     )
                 }
             }
@@ -92,7 +92,7 @@ struct MatrixWidgetEntryView: View {
                     MatrixWidgetHeaderCellView(
                         headerValue: consumption,
                         isHighlighted: isCurrentAvgConsumption,
-                        fractionLength: 0...matrix.consumptionUnitType.fractionDigits
+                        maxFractionDigits: matrix.consumptionUnitType.fractionDigits
                     )
 
                     ForEach(matrix.socHeaders.indices, id: \.self) { columnIndex in

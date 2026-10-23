@@ -10,11 +10,11 @@ import SwiftUI
 struct MatrixWidgetHeaderCellView: View {
     let headerValue: Double
     let isHighlighted: Bool
-    let fractionLength: ClosedRange<Int>
+    let maxFractionDigits: Int
 
     private var formattedValue: AttributedString {
         var attributed = headerValue.formatted(
-            .number.precision(.fractionLength(fractionLength))
+            .matrixHeader(maxFractionDigits: maxFractionDigits)
             .attributed)
 
         for run in attributed.runs {
@@ -38,6 +38,6 @@ struct MatrixWidgetHeaderCellView: View {
     MatrixWidgetHeaderCellView(
         headerValue: 17.5,
         isHighlighted: true,
-        fractionLength: 0...AppConstants.matrixSocMaxFractionDigits
+        maxFractionDigits: 1
     )
 }
