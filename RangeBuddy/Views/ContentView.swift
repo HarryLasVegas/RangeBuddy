@@ -89,7 +89,7 @@ struct ContentView: View {
 
                             HStack {
                                 Spacer()
-                                Text(consumptionUnitType.fullUnitString)
+                                Text(consumptionUnitType.shortLabel)
                                     .font(.footnote)
                             }
                         }

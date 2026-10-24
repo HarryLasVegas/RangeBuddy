@@ -11,7 +11,7 @@
         }
       }
     },
-    "Kilometers" : {
+    "kilometers" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -21,12 +21,32 @@
         }
       }
     },
-    "Miles" : {
+    "kilowatt-hours per 100 kilometers" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kilowattstunden pro 100 Kilometer"
+          }
+        }
+      }
+    },
+    "miles" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Meilen"
+          }
+        }
+      }
+    },
+    "miles per kilowatt-hour" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meilen pro Kilowattstunde"
           }
         }
       }
@@ -77,6 +97,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SoC"
+          }
+        }
+      }
+    },
+    "watt-hours per mile" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wattstunden pro Meile"
           }
         }
       }

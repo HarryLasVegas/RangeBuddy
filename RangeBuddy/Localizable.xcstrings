@@ -91,18 +91,18 @@
         }
       }
     },
-    "Consumption set to %@. Your range is %lld %@." : {
+    "Consumption set to %@ %@. Your range is %lld %@." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verbrauch auf %1$@ geändert. Deine Reichweite beträgt %2$lld %3$@."
+            "value" : "Verbrauch auf %1$@ %2$@ geändert. Deine Reichweite beträgt %3$lld %4$@."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Consumption set to %1$@. Your range is %2$lld %3$@."
+            "value" : "Consumption set to %1$@ %2$@. Your range is %3$lld %4$@."
           }
         }
       }
@@ -137,12 +137,22 @@
         }
       }
     },
-    "Kilometers" : {
+    "kilometers" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kilometer"
+          }
+        }
+      }
+    },
+    "kilowatt-hours per 100 kilometers" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kilowattstunden pro 100 Kilometer"
           }
         }
       }
@@ -177,12 +187,22 @@
         }
       }
     },
-    "Miles" : {
+    "miles" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Meilen"
+          }
+        }
+      }
+    },
+    "miles per kilowatt-hour" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meilen pro Kilowattstunde"
           }
         }
       }
@@ -465,6 +485,22 @@
         }
       }
     },
+    "Value for Consumption must be between %@ and %@ %@." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Wert für den Verbrauch muss zwischen %1$@ und %2$@ %3$@ liegen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Value for Consumption must be between %1$@ and %2$@ %3$@."
+          }
+        }
+      }
+    },
     "Value for Consumption must be between %@ and %@." : {
       "localizations" : {
         "de" : {
@@ -503,6 +539,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version"
+          }
+        }
+      }
+    },
+    "watt-hours per mile" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wattstunden pro Meile"
           }
         }
       }

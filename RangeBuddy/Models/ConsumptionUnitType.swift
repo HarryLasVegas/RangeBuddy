@@ -12,11 +12,19 @@ nonisolated enum ConsumptionUnitType: String, CaseIterable, Identifiable {
 
     var id: String { self.rawValue}
 
-    var fullUnitString: String {
+    var shortLabel: String {
         switch self {
         case .kWhPer100km: "kWh/100km"
         case .milesPerKWh: "mi/kWh"
         case .whPerMile: "Wh/mi"
+        }
+    }
+
+    var fullLabel: LocalizedStringResource {
+        switch self {
+        case .kWhPer100km: "kilowatt-hours per 100 kilometers"
+        case .milesPerKWh: "miles per kilowatt-hour"
+        case .whPerMile: "watt-hours per mile"
         }
     }
 

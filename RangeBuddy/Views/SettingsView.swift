@@ -47,7 +47,7 @@ struct SettingsView: View {
                 Section("Consumption Unit") {
                     Picker("Select Unit", selection: $consumptionUnitType) {
                         ForEach(ConsumptionUnitType.allCases) { type in
-                            Text(type.fullUnitString).tag(type)
+                            Text(type.shortLabel).tag(type)
                         }
                     }
                     .pickerStyle(.menu)

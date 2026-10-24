@@ -32,8 +32,8 @@ nonisolated enum DistanceUnit {
 
     var fullLabel: LocalizedStringResource {
         switch self {
-        case .km: "Kilometers"
-        case .mi: "Miles"
+        case .km: "kilometers"
+        case .mi: "miles"
         }
     }
 }
