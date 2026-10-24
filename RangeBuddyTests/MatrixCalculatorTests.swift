@@ -89,7 +89,7 @@ struct MatrixCalculatorTests {
             stepSize: AppConstants.matrixSocStepSize,
             range: AppConstants.socRange,
             neighborLowerBound: AppConstants.matrixSocStepSize,
-            maxFractionDigits: AppConstants.matrixSocMaxFractionDigits
+            maxFractionDigits: AppConstants.widgetSocMaxFractionDigits
         )
 
         let avgConsumptionSpec = AxisSpec(
@@ -137,7 +137,7 @@ struct MatrixCalculatorTests {
             stepSize: AppConstants.matrixSocStepSize,
             range: AppConstants.socRange,
             neighborLowerBound: AppConstants.matrixSocStepSize,
-            maxFractionDigits: AppConstants.matrixSocMaxFractionDigits
+            maxFractionDigits: AppConstants.widgetSocMaxFractionDigits
         )
 
         let avgConsumptionSpec = AxisSpec(
@@ -223,7 +223,7 @@ struct MatrixCalculatorTests {
             stepSize: AppConstants.matrixSocStepSize,
             range: AppConstants.socRange,
             neighborLowerBound: AppConstants.matrixSocStepSize,
-            maxFractionDigits: AppConstants.matrixSocMaxFractionDigits
+            maxFractionDigits: AppConstants.widgetSocMaxFractionDigits
         )
 
         let avgConsumptionSpec = AxisSpec(

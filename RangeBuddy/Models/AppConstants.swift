@@ -29,11 +29,14 @@ nonisolated struct AppConstants {
     // round trip does not. Anything beyond two digits is rounded.
     static let socAndConsumptionMaxFractionDigits = 2
 
+    // Widgets show the SoC as a whole number, like the car does:
+    // they are for a quick glance and have little space.
+    static let widgetSocMaxFractionDigits = 0
+
     // MatrixWidget
     static let matrixWidgetKind = "MatrixWidget"
     static let matrixDimension: Int = 5
     static let matrixSocStepSize = 10.0
-    static let matrixSocMaxFractionDigits = 1
 
     // RangeWidget
     static let rangeWidgetKind = "RangeWidget"

@@ -32,7 +32,7 @@ struct MatrixWidgetProvider: TimelineProvider {
             stepSize: AppConstants.matrixSocStepSize,
             range: AppConstants.socRange,
             neighborLowerBound: AppConstants.matrixSocStepSize,
-            maxFractionDigits: AppConstants.matrixSocMaxFractionDigits
+            maxFractionDigits: AppConstants.widgetSocMaxFractionDigits
         )
 
         let consumptionUnitType = store.consumptionUnitType
@@ -79,7 +79,7 @@ struct MatrixWidgetEntryView: View {
                     MatrixWidgetHeaderCellView(
                         headerValue: soc,
                         isHighlighted: isCurrentSoc,
-                        maxFractionDigits: AppConstants.matrixSocMaxFractionDigits
+                        maxFractionDigits: AppConstants.widgetSocMaxFractionDigits
                     )
                 }
             }

@@ -102,7 +102,8 @@ struct RangeWidgetEntryView: View {
                     HStack(spacing: 5) {
                         SocRingView(soc: entry.soc)
 
-                        Text(entry.soc.formatted(.number.precision(.fractionLength(0...1))) + "%")
+                        Text(entry.soc.formatted(
+                            .number.precision(.fractionLength(0...AppConstants.widgetSocMaxFractionDigits))) + "%")
                     }
 
                     Spacer()
