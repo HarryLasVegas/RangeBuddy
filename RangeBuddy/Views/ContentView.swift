@@ -60,7 +60,7 @@ struct ContentView: View {
                         HStack {
                             Slider(value: $soc, in: AppConstants.socRange, step: 1)
                             Spacer(minLength: 20)
-                            Text("\(soc, format: .number.precision(.fractionLength(0)))%")
+                            Text(formattedSoc + "%")
                                 .fontDesign(.monospaced)
                                 .animation(.default, value: soc)
                                 .contentTransition(.numericText())
@@ -148,7 +148,12 @@ extension ContentView {
 
     private var formattedConsumption: String {
         consumptionUnitType.fromCanonical(avgConsumptionInKwhPer100km)
-            .formatted(.number.precision(.fractionLength(consumptionUnitType.fractionDigits)))
+            .formatted(.number.precision(.fractionLength(
+                consumptionUnitType.fractionDigits...AppConstants.socAndConsumptionMaxFractionDigits)))
+    }
+
+    private var formattedSoc: String {
+        soc.formatted(.number.precision(.fractionLength(0...AppConstants.socAndConsumptionMaxFractionDigits)))
     }
 }
 

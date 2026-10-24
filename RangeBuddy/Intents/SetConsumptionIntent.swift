@@ -26,7 +26,7 @@ struct SetConsumptionIntent: AppIntent {
         let consumptionUnitType = store.consumptionUnitType
         let consumptionRange = consumptionUnitType.consumptionRange
         let consumptionFormat: FloatingPointFormatStyle<Double> =
-            .number.precision(.fractionLength(0...consumptionUnitType.fractionDigits))
+            .number.precision(.fractionLength(0...AppConstants.socAndConsumptionMaxFractionDigits))
         let unitLabel = consumptionUnitType.fullLabel
 
         guard consumptionRange.contains(newConsumption) else {

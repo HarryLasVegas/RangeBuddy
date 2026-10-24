@@ -70,4 +70,9 @@ struct ConsumptionUnitTypeTests {
 
         #expect(abs(quotient - quotient.rounded()) < tolerance)
     }
+
+    @Test(arguments: ConsumptionUnitType.allCases)
+    func fractionDigitsDoNotExceedSocAndConsumptionMaxFractionDigits(unit: ConsumptionUnitType) {
+        #expect(unit.fractionDigits <= AppConstants.socAndConsumptionMaxFractionDigits)
+    }
 }

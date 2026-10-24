@@ -29,7 +29,7 @@ struct SetSocAndConsumptionIntent: AppIntent {
         let consumptionUnitType = store.consumptionUnitType
         let consumptionRange = consumptionUnitType.consumptionRange
         let consumptionFormat: FloatingPointFormatStyle<Double> =
-            .number.precision(.fractionLength(0...consumptionUnitType.fractionDigits))
+            .number.precision(.fractionLength(0...AppConstants.socAndConsumptionMaxFractionDigits))
         let consumptionUnitLabel = consumptionUnitType.fullLabel
 
         guard AppConstants.socRange.contains(newSoc) else {
@@ -63,7 +63,8 @@ struct SetSocAndConsumptionIntent: AppIntent {
 
         let range: Int = distanceUnit.displayDistance(rangeInKm)
         let newConsumptionString = newConsumption.formatted(consumptionFormat)
-        let newSocString = newSoc.formatted(.number.precision(.fractionLength(0)))
+        let newSocString = newSoc.formatted(
+            .number.precision(.fractionLength(0...AppConstants.socAndConsumptionMaxFractionDigits)))
 
         // swiftlint:disable:next line_length
         return .result(dialog: "SoC set to \(newSocString) percent, consumption set to \(newConsumptionString) \(consumptionUnitLabel). Your range is \(range) \(distanceUnit.fullLabel).")

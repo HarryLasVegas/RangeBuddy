@@ -24,6 +24,11 @@ nonisolated struct AppConstants {
     static let socRange: ClosedRange<Double> = 0...100
     static let batteryCapacityRange: ClosedRange<Double> = 20...150
 
+    // SoC and consumption are shown with up to two fraction digits: odd values set
+    // via Shortcuts (e.g. 15.98) stay visible, while float noise from the canonical
+    // round trip does not. Anything beyond two digits is rounded.
+    static let socAndConsumptionMaxFractionDigits = 2
+
     // MatrixWidget
     static let matrixWidgetKind = "MatrixWidget"
     static let matrixDimension: Int = 5

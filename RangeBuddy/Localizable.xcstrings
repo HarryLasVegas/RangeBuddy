@@ -1,16 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@%%" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@%%"
-          }
-        }
-      }
-    },
     "%@kWh" : {
       "localizations" : {
         "de" : {
@@ -449,18 +439,18 @@
         }
       }
     },
-    "SoC set to %@. Your range is %lld %@." : {
+    "SoC set to %@ percent. Your range is %lld %@." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SoC auf %1$@ geändert. Deine Reichweite beträgt %2$lld %3$@."
+            "value" : "SoC auf %1$@ Prozent geändert. Deine Reichweite beträgt %2$lld %3$@."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "SoC set to %1$@. Your range is %2$lld %3$@."
+            "value" : "SoC set to %1$@ percent. Your range is %2$lld %3$@."
           }
         }
       }

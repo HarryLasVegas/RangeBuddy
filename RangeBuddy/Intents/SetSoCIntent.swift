@@ -42,8 +42,9 @@ struct SetSoCIntent: AppIntent {
             batteryCapacity: batteryCapacity
         )
         let range: Int = distanceUnit.displayDistance(rangeInKm)
-        let newSocString = newSoc.formatted(.number.precision(.fractionLength(0)))
+        let newSocString = newSoc.formatted(
+            .number.precision(.fractionLength(0...AppConstants.socAndConsumptionMaxFractionDigits)))
 
-        return .result(dialog: "SoC set to \(newSocString). Your range is \(range) \(distanceUnit.fullLabel).")
+        return .result(dialog: "SoC set to \(newSocString) percent. Your range is \(range) \(distanceUnit.fullLabel).")
     }
 }

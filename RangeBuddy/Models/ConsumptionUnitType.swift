@@ -99,6 +99,7 @@ nonisolated enum ConsumptionUnitType: String, CaseIterable, Identifiable {
         }
     }
 
+    /// The number of fraction digits this unit is usually given with.
     var fractionDigits: Int {
         switch self {
         case .kWhPer100km, .milesPerKWh: 1
