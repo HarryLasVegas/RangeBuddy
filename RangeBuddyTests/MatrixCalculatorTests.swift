@@ -11,13 +11,15 @@ import Testing
 struct MatrixCalculatorTests {
 
     @Test(arguments: [
-        (0, [0, 10, 20, 30, 40], 0),        // 0 just once, no neighbour below
-        (3, [3, 10, 20, 30, 40], 0),        // no 0-neighbour, window shifts up
-        (11, [10, 11, 20, 30, 40], 1),      // lower edge, only one neighbour below
-        (50, [30, 40, 50, 60, 70], 2),      // standard case, two neighbours below and above
-        (47.3, [30, 40, 47.3, 50, 60], 2),  // off-grid value, neighbours are the grid points around it
-        (97, [70, 80, 90, 97, 100], 3),     // upper edge, only one neighbour above
-        (100, [60, 70, 80, 90, 100], 4)     // 100 just once, no neighbour above
+        (0, [0, 10, 20, 30, 40], 0),            // 0 just once, no neighbour below
+        (3, [3, 10, 20, 30, 40], 0),            // no 0-neighbour, window shifts up
+        (11, [10, 11, 20, 30, 40], 1),          // lower edge, only one neighbour below
+        (50, [30, 40, 50, 60, 70], 2),          // standard case, two neighbours below and above
+        (47.3, [30, 40, 47.3, 50, 60], 2),      // off-grid value, neighbours are the grid points around it
+        (97, [70, 80, 90, 97, 100], 3),         // upper edge, only one neighbour above
+        (100, [60, 70, 80, 90, 100], 4),        // 100 just once, no neighbour above
+        (49.96, [30, 40, 49.96, 60, 70], 2),    // neighbour above (50) displays like 49.96, so it is skipped
+        (50.02, [30, 40, 50.02, 60, 70], 2)     // neighbour below (50) displays like 50.02, so it is skipped
     ])
     func socHeadersForStepTenDimensionFive(
         soc: Double,
@@ -61,11 +63,13 @@ struct MatrixCalculatorTests {
     }
 
     @Test(arguments: [
-        (10, [10, 12, 14, 16, 18], 0),      // lower edge on grid, no neighbour below
-        (11, [10, 11, 12, 14, 16], 1),      // lower edge, only one neighbour below
-        (17.5, [14, 16, 17.5, 18, 20], 2),  // off-grid value, neighbours are the grid points around it
-        (20, [16, 18, 20, 22, 24], 2),      // standard case, two neighbours below and above
-        (35, [28, 30, 32, 34, 35], 4)       // upper edge of range, not on grid, no neighbour above
+        (10, [10, 12, 14, 16, 18], 0),          // lower edge on grid, no neighbour below
+        (11, [10, 11, 12, 14, 16], 1),          // lower edge, only one neighbour below
+        (17.5, [14, 16, 17.5, 18, 20], 2),      // off-grid value, neighbours are the grid points around it
+        (20, [16, 18, 20, 22, 24], 2),          // standard case, two neighbours below and above
+        (35, [28, 30, 32, 34, 35], 4),          // upper edge of range, not on grid, no neighbour above
+        (15.98, [12, 14, 15.98, 18, 20], 2),    // neighbour above (16) displays like 15.98, so it is skipped
+        (16.02, [12, 14, 16.02, 18, 20], 2)     // neighbour below (16) displays like 16.02, so it is skipped
     ])
     func avgConsumptionHeadersForStepTwoDimensionFive(
         avgConsumption: Double,
@@ -112,7 +116,8 @@ struct MatrixCalculatorTests {
         (2.0, [4.0, 3.5, 3.0, 2.5, 2.0], 4),    // lower bound, index mirrors from 0 to 4, catches missing mirroring
         (2.3, [3.5, 3.0, 2.5, 2.3, 2.0], 3),    // not on grid, index mirrors from 1 to 3, catches missing mirroring
         (3.5, [4.5, 4.0, 3.5, 3.0, 2.5], 2),    // standard case, just values have to be mirrored
-        (6.0, [6.0, 5.5, 5.0, 4.5, 4.0], 0)     // upper bound, index mirrors from 4 to 0, catches missing mirroring
+        (6.0, [6.0, 5.5, 5.0, 4.5, 4.0], 0),    // upper bound, index mirrors from 4 to 0, catches missing mirroring
+        (3.48, [4.5, 4.0, 3.48, 3.0, 2.5], 2)   // neighbour above (3.5) displays like 3.48, so it is skipped
     ])
     func avgConsumptionHeadersReversedForMilesPerKWh(
         avgConsumption: Double,

@@ -120,24 +120,32 @@ nonisolated struct MatrixCalculator {
         precondition(axisSpec.range.lowerBound >= 0, "Range must have only positive values")
         precondition(axisSpec.stepSize > 0, "StepSize has to be a positive number")
 
-        var headerValues: [Double] = []
+        // A neighbor that is displayed like the current value would show up as a duplicate row.
+        let headerStyle: FloatingPointFormatStyle<Double> = .matrixHeader(maxFractionDigits: axisSpec.maxFractionDigits)
+        let formattedBaseValue = axisSpec.currentValue.formatted(headerStyle)
 
         let candidatesBelowBase = getValidStepsBelow(
             baseValue: axisSpec.currentValue,
             stepSize: axisSpec.stepSize,
             lowerBound: axisSpec.neighborLowerBound
-        )
+        ).filter {
+            $0.formatted(headerStyle) != formattedBaseValue
+        }
 
         let candidatesAboveBase = getValidStepsAbove(
             baseValue: axisSpec.currentValue,
             stepSize: axisSpec.stepSize,
             upperBound: axisSpec.range.upperBound
-        )
+        ).filter {
+            $0.formatted(headerStyle) != formattedBaseValue
+        }
 
         precondition(
             candidatesBelowBase.count + candidatesAboveBase.count + 1 >= matrixDimension,
             "There must be at least matrixDimension values present"
         )
+
+        var headerValues: [Double] = []
 
         let standardNumberOfValuesBelowAndAbove = (matrixDimension - 1) / 2
         let numberOfAdditionalBelowValues = standardNumberOfValuesBelowAndAbove - min(
