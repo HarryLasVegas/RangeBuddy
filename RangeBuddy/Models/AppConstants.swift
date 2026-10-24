@@ -22,7 +22,6 @@ nonisolated struct AppConstants {
     static let standardBatteryCapacity: Double = 58.0
 
     static let socRange: ClosedRange<Double> = 0...100
-    static let avgConsumptionInKwhPer100kmRange: ClosedRange<Double> = 10...35
     static let batteryCapacityRange: ClosedRange<Double> = 20...150
 
     // MatrixWidget

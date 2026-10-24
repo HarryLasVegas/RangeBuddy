@@ -433,18 +433,18 @@
         }
       }
     },
-    "SoC set to %@, Consumption set to %@. Your range is %lld %@." : {
+    "SoC set to %@ percent, consumption set to %@ %@. Your range is %lld %@." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SoC auf %1$@ und Verbrauch auf %2$@ geändert. Deine Reichweite beträgt %3$lld %4$@."
+            "value" : "SoC auf %1$@ Prozent und Verbrauch auf %2$@ %3$@ geändert. Deine Reichweite beträgt %4$lld %5$@."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "SoC set to %1$@, Consumption set to %2$@. Your range is %3$lld %4$@."
+            "value" : "SoC set to %1$@ percent, consumption set to %2$@ %3$@. Your range is %4$lld %5$@."
           }
         }
       }
@@ -497,22 +497,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Value for Consumption must be between %1$@ and %2$@ %3$@."
-          }
-        }
-      }
-    },
-    "Value for Consumption must be between %@ and %@." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Der Wert für den Verbrauch muss zwischen %1$@ und %2$@ liegen."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Value for Consumption must be between %1$@ and %2$@."
           }
         }
       }

@@ -26,17 +26,11 @@ struct SetSocAndConsumptionIntent: AppIntent {
     @MainActor
     func perform() async throws -> some IntentResult & ProvidesDialog {
         let store = DataStore()
-
-        // TODO: change!
-        guard AppConstants.avgConsumptionInKwhPer100kmRange.contains(newConsumption) else {
-            let consumption = AppConstants.avgConsumptionInKwhPer100kmRange
-            let format: FloatingPointFormatStyle<Double> = .number.precision(.fractionLength(0))
-
-            let min = consumption.lowerBound.formatted(format)
-            let max = consumption.upperBound.formatted(format)
-
-            throw $newConsumption.needsValueError("Value for Consumption must be between \(min) and \(max).")
-        }
+        let consumptionUnitType = store.consumptionUnitType
+        let consumptionRange = consumptionUnitType.consumptionRange
+        let consumptionFormat: FloatingPointFormatStyle<Double> =
+            .number.precision(.fractionLength(0...consumptionUnitType.fractionDigits))
+        let consumptionUnitLabel = consumptionUnitType.fullLabel
 
         guard AppConstants.socRange.contains(newSoc) else {
             let min: String = AppConstants.socRange.lowerBound.formatted(.number.precision(.fractionLength(0)))
@@ -45,22 +39,33 @@ struct SetSocAndConsumptionIntent: AppIntent {
             throw $newSoc.needsValueError("Value for SoC must be between \(min) and \(max).")
         }
 
-        store.avgConsumptionInKwhPer100km = newConsumption
+        guard consumptionRange.contains(newConsumption) else {
+            let min = consumptionRange.lowerBound.formatted(consumptionFormat)
+            let max = consumptionRange.upperBound.formatted(consumptionFormat)
+
+            // swiftlint:disable:next line_length
+            throw $newConsumption.needsValueError("Value for Consumption must be between \(min) and \(max) \(consumptionUnitLabel).")
+        }
+
+        let newConsumptionInKwhPer100km = consumptionUnitType.toCanonical(newConsumption)
+
+        store.avgConsumptionInKwhPer100km = newConsumptionInKwhPer100km
         store.soc = newSoc
+
         let batteryCapacity = store.batteryCapacity
-        let distanceUnit: DistanceUnit = store.consumptionUnitType.distanceUnit
+        let distanceUnit: DistanceUnit = consumptionUnitType.distanceUnit
 
         let rangeInKm: Double = RangeCalculator.rangeInKm(
             soc: newSoc,
-            avgConsumption: newConsumption,
+            avgConsumption: newConsumptionInKwhPer100km,
             batteryCapacity: batteryCapacity
         )
 
         let range: Int = distanceUnit.displayDistance(rangeInKm)
-        let newConsumptionString = newConsumption.formatted(.number.precision(.fractionLength(1)))
+        let newConsumptionString = newConsumption.formatted(consumptionFormat)
         let newSocString = newSoc.formatted(.number.precision(.fractionLength(0)))
 
         // swiftlint:disable:next line_length
-        return .result(dialog: "SoC set to \(newSocString), Consumption set to \(newConsumptionString). Your range is \(range) \(distanceUnit.fullLabel).")
+        return .result(dialog: "SoC set to \(newSocString) percent, consumption set to \(newConsumptionString) \(consumptionUnitLabel). Your range is \(range) \(distanceUnit.fullLabel).")
     }
 }
