@@ -160,6 +160,52 @@ struct MatrixCalculatorTests {
         #expect(matrix.currentAvgConsumptionIndex == expectedAvgConsumptionIndex)
     }
 
+    @Test(arguments: [
+        (280, [250, 275, 280, 300, 325], 2),    // standard case, axis stays ascending (not reversed)
+        (170, [170, 175, 200, 225, 250], 0),    // lower edge, 165 is off-grid and never a neighbour
+        (555, [475, 500, 525, 550, 555], 4)     // upper edge, 560 is off-grid and never a neighbour
+    ])
+    func avgConsumptionHeadersForWhPerMileStepTwentyFive(
+        avgConsumption: Double,
+        expectedAvgConsumptionHeaders: [Double],
+        expectedAvgConsumptionIndex: Int
+    ) {
+        let stepSize = 25.0
+        let matrixDimension = 5
+        let unit = ConsumptionUnitType.whPerMile
+        let batteryCapacity = 58.0
+        let avgConsumptionRange: ClosedRange<Double> = 165...560
+
+        // Just dummy values - axis doesn't matter in this test
+        // but must be available
+        let socSpec = AxisSpec(
+            currentValue: 20.0,
+            stepSize: AppConstants.matrixSocStepSize,
+            range: AppConstants.socRange,
+            neighborLowerBound: AppConstants.matrixSocStepSize,
+            maxFractionDigits: AppConstants.widgetSocMaxFractionDigits
+        )
+
+        let avgConsumptionSpec = AxisSpec(
+            currentValue: avgConsumption,
+            stepSize: stepSize,
+            range: avgConsumptionRange,
+            neighborLowerBound: avgConsumptionRange.lowerBound,
+            maxFractionDigits: 0
+        )
+
+        let matrix = MatrixCalculator.createMatrix(
+            soc: socSpec,
+            avgConsumption: avgConsumptionSpec,
+            batteryCapacity: batteryCapacity,
+            matrixDimension: matrixDimension,
+            consumptionUnitType: unit
+        )
+
+        #expect(matrix.avgConsumptionHeaders == expectedAvgConsumptionHeaders)
+        #expect(matrix.currentAvgConsumptionIndex == expectedAvgConsumptionIndex)
+    }
+
     @Test func matrixIsNotTransposed() {
         let socStepSize = 10.0
         let socRange: ClosedRange<Double> = 0...100
