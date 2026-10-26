@@ -71,6 +71,10 @@ final class DataStore {
     /// Safe to call repeatedly - it does nothing after the first run. Must run before anything reads from the
     /// shared store, which is why both the app and `DataStore.init` call it.
     ///
+    /// Users of mi/kWh or Wh/mi get their unit's standard consumption: the 1.0 slider could store values
+    /// outside the new ranges, which would crash the matrix widget. It costs them one consumption value;
+    /// kWh/100km users keep theirs.
+    ///
     /// Added in 1.1. Can be removed once 1.0 is effectively out of the field: a user skipping straight from 1.0 loses
     /// nothing but their four settings and sees onboarding once.
     static func migrateToAppGroup() {
@@ -89,6 +93,19 @@ final class DataStore {
 
         if didMigrateValues {
             UserDefaults.shared.set(true, forKey: Self.migrationKey)
+
+            let unit = ConsumptionUnitType(
+                rawValue: UserDefaults.shared.string(
+                    forKey: AppStorageKeys.consumptionUnitType.rawValue
+                ) ?? AppConstants.consumptionUnitType.rawValue
+            ) ?? AppConstants.consumptionUnitType
+
+            if unit != .kWhPer100km {
+                UserDefaults.shared.set(
+                    unit.toCanonical(unit.standardAvgConsumption),
+                    forKey: AppStorageKeys.avgConsumptionInKwhPer100km.rawValue
+                )
+            }
         }
     }
 }
